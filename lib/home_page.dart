@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'timeline_tab.dart';
 import 'custom_drawer.dart';
+import 'screens/chat_room_screen.dart'; // Import ChatRoomScreen
 
 class HomePage extends StatelessWidget {
   @override
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.menu,
                   size: 30.0,
                   color: Color(0xFF1D787B),
@@ -28,7 +29,7 @@ class HomePage extends StatelessWidget {
               );
             },
           ),
-          title: Row(
+          title: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
@@ -47,17 +48,20 @@ class HomePage extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.message_outlined,
                 size: 30.0,
                 color: Color(0xFF1D787B),
               ),
               onPressed: () {
-                // Notifications action
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChatRoomScreen()),
+                );
               },
             ),
           ],
-          bottom: TabBar(
+          bottom: const TabBar(
             indicatorColor: Color(0xFF1D787B),
             labelColor: Color(0xFF1D787B),
             unselectedLabelColor: Color(0xFF999999),
@@ -75,16 +79,16 @@ class HomePage extends StatelessWidget {
         body: TabBarView(
           children: [
             TimelineTab(), // First tab content
-            Center(child: Text("Health Update Content Here")), // Second tab content
+            const Center(child: Text("Health Update Content Here")), // Second tab content
           ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             // FAB action
           },
-          child: Icon(Icons.add, color: Colors.white,),
+          child: const Icon(Icons.add, color: Colors.white,),
           backgroundColor: Colors.teal,
-          shape: CircleBorder(),  // Ensures the button is round
+          shape: const CircleBorder(),  // Ensures the button is round
         ),
       ),
     );

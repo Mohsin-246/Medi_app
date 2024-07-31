@@ -1,6 +1,7 @@
 // File: lib/widgets/custom_app_bar.dart
 
 import 'package:flutter/material.dart';
+import '../screens/chat_screen.dart'; // Import ChatScreen
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double appBarHeight;
@@ -13,7 +14,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Builder(
         builder: (BuildContext context) {
           return IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.menu,
               size: 30.0,
               color: Color(0xFF1D787B),  // Icon color set to teal
@@ -24,7 +25,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           );
         },
       ),
-      title: Row(
+      title: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircleAvatar(
@@ -43,14 +44,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.message_outlined,
             size: 30.0,
             color: Color(0xFF1D787B),  // Icon color set to teal
           ),
           onPressed: () {
-            // Notifications action
-          },
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChatScreen()),
+                );
+              },
         ),
       ],
       backgroundColor: Colors.white,  // White background for AppBar

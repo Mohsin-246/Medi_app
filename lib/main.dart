@@ -17,6 +17,7 @@ class MediApp extends StatelessWidget {
       title: 'Medi App',
       theme: ThemeData(
         primarySwatch: Colors.teal,
+        scaffoldBackgroundColor: Colors.white,
       ),
       home: MainPage(),
     );
@@ -57,6 +58,7 @@ class _MainPageState extends State<MainPage> {
           backgroundColor: Colors.white,  // Set the background color to white
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.teal,
+
           unselectedItemColor: Colors.grey,
           onTap: _onItemTapped,
           items: const <BottomNavigationBarItem>[

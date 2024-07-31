@@ -68,6 +68,13 @@ flutter:
   assets:
     - assets/doc1.jpg
     - assets/pharm1.jpg
+    - assets/doc2.jpg
+    - assets/doc3.jpeg
+    - assets/doc4.jpg
+    - assets/doc5.jpg
+    - assets/doc6.jpg
+    - assets/doc7.jpg
+    - assets/alpha.jpg
 
 
 
