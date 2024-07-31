@@ -76,11 +76,12 @@ class PostCard extends StatelessWidget {
                     Icon(Icons.thumb_up_alt_outlined),
                     SizedBox(width: 5),
                     Text("Like"),
+                    
                   ],
                 ),
                 Row(
                   children: [
-                    Icon(Icons.comment_outlined),
+                    Icon(Icons.comment_outlined ),
                     SizedBox(width: 5),
                     Text("Comment"),
                   ],

@@ -8,59 +8,53 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 246, 245, 245),
+      backgroundColor: const Color.fromARGB(255, 246, 245, 245),
       appBar: CustomAppBar(appBarHeight: 85.0),  // Use the custom AppBar
       drawer: CustomDrawer(),  // Link to your custom drawer
       body: SingleChildScrollView(
-        
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 20),
-            CircleAvatar(
+            const SizedBox(height: 20),
+            const CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('assets/profile_image.jpg'), // Replace with your image asset
+              backgroundImage: AssetImage('assets/doc1.jpg'), // Replace with your image asset
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               'Roseline',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Text(
+            const Text(
               'Roselinebabyxyz@gmail.com',
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.grey,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
                 // Edit profile action
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF1D787B),
-                
+                backgroundColor: const Color(0xFF1D787B),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0),
                 ),
               ),
-              child: Text('Edit Profile', style: TextStyle(color: Colors.white),),
+              child: const Text('Edit Profile', style: TextStyle(color: Colors.white)),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             buildSectionTitle(context, 'Personal Information'),
-            buildMenuOption(context, 'Profile Details', Icons.person),
-            buildMenuOption(context, 'Payment Method', Icons.payment),
-            buildMenuOption(context, 'Insurance', Icons.verified_user),
-            SizedBox(height: 20),
+            buildPersonalInfoCard(context),
+            const SizedBox(height: 20),
             buildSectionTitle(context, 'Health Settings'),
-            buildMenuOption(context, 'Drug intake', Icons.medical_services),
-            buildMenuOption(context, 'Prescription history', Icons.history),
-            buildMenuOption(context, 'Refund status', Icons.receipt),
+            buildHealthSettingsCard(context),
           ],
         ),
       ),
@@ -70,36 +64,75 @@ class ProfileScreen extends StatelessWidget {
   Widget buildSectionTitle(BuildContext context, String title) {
     return Padding(
       padding: const EdgeInsets.only(left: 8.0, top: 16.0, bottom: 8.0),
-      
       child: Align(
         alignment: Alignment.centerLeft,
         child: Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Colors.black54,
-            
+            color: Colors.black87,
           ),
         ),
       ),
     );
   }
 
-  Widget buildMenuOption(BuildContext context, String title, IconData icon) {
+  Widget buildPersonalInfoCard(BuildContext context) {
     return Card(
+      color: Colors.white,
       elevation: 2.0,
-      margin: EdgeInsets.symmetric(vertical: 10.0),
-      child: ListTile(
-        leading: Icon(icon, color: Color(0xFF1D787B)),
-        title: Text(title),
-        
-        
-        trailing: Icon(Icons.arrow_forward_ios, color: Colors.grey),
-        onTap: () {
-          // Navigate to the respective screen
-        },
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
       ),
+      child: Column(
+        children: [
+          buildMenuOption(context, 'Profile Details', Icons.person),
+          Divider(height: 1, thickness: 1, color: Colors.grey[300]),
+          buildMenuOption(context, 'Payment Method', Icons.payment),
+          Divider(height: 1, thickness: 1, color: Colors.grey[300]),
+          buildMenuOption(context, 'Insurance', Icons.verified_user),
+        ],
+      ),
+    );
+  }
+
+  Widget buildHealthSettingsCard(BuildContext context) {
+    return Card(
+      color: Colors.white,
+
+      elevation: 2.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      child: Column(
+        children: [
+          buildMenuOption(context, 'Drug intake', Icons.medical_services),
+          Divider(height: 1, thickness: 1, color: Colors.grey[300]),
+          buildMenuOption(context, 'Prescription history', Icons.history),
+          Divider(height: 1, thickness: 1, color: Colors.grey[300]),
+          buildMenuOption(context, 'Refund status', Icons.receipt),
+        ],
+      ),
+    );
+  }
+
+  Widget buildMenuOption(BuildContext context, String title, IconData icon) {
+    return ListTile(
+      
+      contentPadding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      leading: Icon(icon, size: 40.0, color: const Color(0xFF1D787B)), // Set icon size and color
+      title: Text(
+        title,
+        style: const TextStyle(
+          color: Colors.black87,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      trailing: const Icon(Icons.arrow_forward_ios, color: Colors.grey),
+      onTap: () {
+        // Navigate to the respective screen
+      },
     );
   }
 }

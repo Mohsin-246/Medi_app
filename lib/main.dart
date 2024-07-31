@@ -49,7 +49,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[_selectedIndex],
-      backgroundColor: Colors.white,
+      
       bottomNavigationBar: Container(
         height: 70.0,  // Set the height of the BottomNavigationBar
         child: BottomNavigationBar(
