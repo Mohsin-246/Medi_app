@@ -19,6 +19,7 @@ class MediApp extends StatelessWidget {
         primarySwatch: Colors.teal,
         scaffoldBackgroundColor: Color(0xFFF8F9F9),
       ),
+       debugShowCheckedModeBanner: false,
       home: MainPage(),
     );
   }
