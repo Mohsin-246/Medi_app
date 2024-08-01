@@ -75,6 +75,16 @@ flutter:
     - assets/doc6.jpg
     - assets/doc7.jpg
     - assets/alpha.jpg
+    - assets/prof1.png
+    - assets/icon_images/refund.png
+    - assets/icon_images/health-report.png
+    - assets/icon_images/schedule.png
+    - assets/icon_images/shield.png
+    - assets/icon_images/credit-card.png
+    - assets/icon_images/profile.png
+
+
+
 
 
 
@@ -83,6 +93,12 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
+fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a

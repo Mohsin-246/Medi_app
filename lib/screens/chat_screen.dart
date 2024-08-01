@@ -24,11 +24,13 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Widget _buildMessage(Map<String, dynamic> message) {
     return Align(
-      alignment: message['isSentByMe'] ? Alignment.centerRight : Alignment.centerLeft,
+      alignment:
+          message['isSentByMe'] ? Alignment.centerRight : Alignment.centerLeft,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 5.0),
         child: Container(
-          constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.7),
+          constraints:
+              BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.7),
           padding: const EdgeInsets.all(10.0),
           decoration: BoxDecoration(
             color: message['isSentByMe'] ? Colors.teal[50] : Colors.grey[200],
@@ -64,17 +66,26 @@ class _ChatScreenState extends State<ChatScreen> {
                 Text(
                   "DR. John Doe",
                   style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      color: Color(0xFF333333),
+                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Poppins',
+                      fontSize: 15.0),
                 ),
-                Text(
-                  "Shareef Abad MSAG",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 12,
+                Row(children: [
+                  Icon(
+                    Icons.location_on,
+                    size: 12.0,
+                    color: Color.fromARGB(255, 58, 55, 55),
                   ),
-                ),
+                  Text(
+                    "Shareef Abad MSAG",
+                    style: TextStyle(
+                        color: Color(0xFF888888),
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Poppins',
+                        fontSize: 12.0),
+                  ),
+                ])
               ],
             ),
           ],
@@ -107,12 +118,14 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Widget _buildMessageInput() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(16.0),
       child: Row(
         children: [
           Expanded(
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.only(
+                  left: 16.0, right: 8.0, top: 8.0, bottom: 8.0),
+              height: 54.0,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30.0),
@@ -137,7 +150,10 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.camera_alt),
+                    icon: const Icon(
+                      Icons.camera_alt,
+                      size: 22.0,
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -147,11 +163,36 @@ class _ChatScreenState extends State<ChatScreen> {
           const SizedBox(width: 8.0),
           FloatingActionButton(
             onPressed: _sendMessage,
-            backgroundColor: Colors.teal,
-            child: const Icon(Icons.send, color: Colors.white),
+            backgroundColor: Color(0xFF03989F),
+            
+            shape: const CircleBorder(),
+            child: const SizedBox(
+              width: 60.0, // Increased width for a larger button
+              height: 60.0, // Increased height for a larger button
+              child: Icon(Icons.send,
+                  color: Colors.white, size: 30.0), // Larger icon size
+            ),
           ),
         ],
       ),
     );
+  }
+}
+class InsetShadowPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Paint paint = Paint()
+      ..color = Color(0xFF03989F)
+      ..maskFilter = MaskFilter.blur(BlurStyle.normal, 10);
+    
+    final Rect rect = Rect.fromLTWH(0, 0, size.width, size.height);
+    final RRect rrect = RRect.fromRectAndRadius(rect, Radius.circular(size.width / 2));
+    
+    canvas.drawRRect(rrect, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
   }
 }

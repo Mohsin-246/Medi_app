@@ -15,7 +15,7 @@ class CustomDrawerHeader extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 30,
-              backgroundColor: Color(0xFF1D787B),
+              backgroundColor: Color(0xFF03989F),
               child: Text('MH', style: TextStyle(color: Colors.white, fontSize: 20)),
             ),
             Spacer(),

@@ -11,6 +11,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.white, 
+      surfaceTintColor: Colors.transparent, // Ensure the AppBar stays white
+      elevation: 0,  // Remove shadow under AppBar
+      
       leading: Builder(
         builder: (BuildContext context) {
           return IconButton(
@@ -30,7 +34,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           CircleAvatar(
             radius: 25,
-            backgroundColor: Color(0xFF1D787B),  // Teal color background
+            backgroundColor: Color(0xFF03989F),  // Teal color background
             child: Text(
               'MH',
               style: TextStyle(
@@ -50,19 +54,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             color: Color(0xFF1D787B),  // Icon color set to teal
           ),
           onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ChatScreen()),
-                );
-              },
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ChatScreen()),
+            );
+          },
         ),
       ],
-      backgroundColor: Colors.white,  // White background for AppBar
-      elevation: 0,  // Remove shadow
       toolbarHeight: appBarHeight,
     );
   }
 
   @override
   Size get preferredSize => Size.fromHeight(appBarHeight);
+  
 }

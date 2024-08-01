@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 236, 235, 235),
+        backgroundColor: const Color(0xFFF8F9F9),
         appBar: AppBar(
           toolbarHeight: 85,
           backgroundColor: Colors.white,
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 25,
-                backgroundColor: Color(0xFF1D787B),
+                backgroundColor: Color(0xFF03989F),
                 child: Text(
                   'MH',
                   style: TextStyle(
@@ -62,8 +62,8 @@ class HomePage extends StatelessWidget {
             ),
           ],
           bottom: const TabBar(
-            indicatorColor: Color(0xFF1D787B),
-            labelColor: Color(0xFF1D787B),
+            indicatorColor: Color(0xFF03989F),
+            labelColor: Color(0xFF03989F),
             unselectedLabelColor: Color(0xFF999999),
             labelStyle: TextStyle(
               fontSize: 14.0, // Font size for the selected tab

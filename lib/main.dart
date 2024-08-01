@@ -17,7 +17,7 @@ class MediApp extends StatelessWidget {
       title: 'Medi App',
       theme: ThemeData(
         primarySwatch: Colors.teal,
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: Color(0xFFF8F9F9),
       ),
       home: MainPage(),
     );

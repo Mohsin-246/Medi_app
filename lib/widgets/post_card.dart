@@ -30,43 +30,45 @@ class PostCard extends StatelessWidget {
                   children: [
                     Text(
                       "Dr. Roseline",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(fontWeight: FontWeight.w600, fontFamily: 'Poppins', fontSize: 14.0),
                     ),
                     Text(
                       "50 minutes ago",
-                      style: TextStyle(color: Colors.grey),
+                      style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400, fontFamily: 'Poppins', fontSize: 10.0),
                     ),
                   ],
                 ),
                 Spacer(),
-                Icon(Icons.more_vert),
+                Icon(Icons.more_horiz),
               ],
             ),
             SizedBox(height: 10),
-            Text("Dear Medihub network, Good Morning!"),
+            Text("Dear Medihub network, Good Morning!", style: TextStyle(fontWeight: FontWeight.w400, fontFamily: 'Poppins', fontSize: 12.0),),
             SizedBox(height: 10),
             Image.asset('assets/pharm1.jpg'), // Replace with network image or actual image asset
             SizedBox(height: 10),
             Row(
               children: const [
                 CircleAvatar(
-                  radius: 12,
+                  radius: 10,
                   backgroundImage: AssetImage('assets/doc1.jpg'), // Your local image
                 ),
                 SizedBox(width: 10),
                 Expanded(
                   child: Text(
                     "mark z. and 36 others liked this",
-                    style: TextStyle(fontSize: 14),
+                    style: TextStyle(fontSize: 10.0 , fontWeight: FontWeight.w500, fontFamily: 'Poppins', color: Color(0xFF374A48)),
                   ),
                 ),
                 Text(
                   "26 Comments",
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                  style: TextStyle(fontSize: 10.0 , fontWeight: FontWeight.w500, fontFamily: 'Poppins', color: Color(0xFF374A48)),
                 ),
+                
               ],
             ),
-            Divider(), // Adds a divider between the sections
+            Divider(),
+            // Adds a divider between the sections
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
